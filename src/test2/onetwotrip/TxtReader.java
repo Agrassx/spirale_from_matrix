@@ -38,6 +38,7 @@ public class TxtReader {
             for (int j = 0; j < charArray[0].length; j++) {
                 if (letter == charArray[i][j] || letter == changeCase(charArray[i][j])) {
                     list.add(new Pair(i, j, charArray[i][j]));
+                    charArray[i][j] = ' ';
                     return;
                 }
             }
