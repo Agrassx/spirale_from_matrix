@@ -1,5 +1,7 @@
 package test2.onetwotrip;
 
+import test2.onetwotrip.exceptions.SquareException;
+
 import java.util.Random;
 
 public class MatrixToSpiralUtil {
@@ -33,8 +35,8 @@ public class MatrixToSpiralUtil {
 
     public String getSpiralString(int[][] matrix) {
         if (matrix.length != matrix[0].length) {
-            new Exception("Matrix must be square!").printStackTrace();
-            return "";
+            new SquareException("Matrix must be square").printStackTrace();
+            return null;
         }
 
         int centralIndex = (matrix.length - 1) / 2;

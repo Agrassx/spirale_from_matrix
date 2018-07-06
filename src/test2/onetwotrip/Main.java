@@ -1,5 +1,8 @@
 package test2.onetwotrip;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,29 +14,19 @@ public class Main {
                 {21, 22, 32, 24, 25}
         };
 
-        int[][] B3 = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
-        };
-
-        int[][] B2 = {
-                {1, 2, 3},
-                {4, 5, 6}
+        int[][] B4 = {
+                {1,  2,  3,  4,  5},
+                {6,  7,  8,  9,  10},
+                {11, 12, 13, 14, 15},
+                {16, 17, 18, 19, 20}
         };
 
 
-        printMatrix("Matrix B", B3);
-        System.out.println( new MatrixToSpiralUtil().getSpiralString(B2));
+//        printMatrix("B5", B4);
+//        System.out.println(new MatrixToSpiralUtil().getSpiralString(B4));
 
-
-        int[][] randomMatrix = new MatrixToSpiralUtil().generateRandomMatrix(2, 25);
-
-        printMatrix("Random Matrix", randomMatrix);
-        System.out.println(new MatrixToSpiralUtil().getSpiralString(randomMatrix));
-
-        printMatrix("B5", B5);
-        System.out.println(new MatrixToSpiralUtil().getSpiralString(B5));
+        TxtReader reader = new TxtReader("OneTwoTrip", new File("in.txt"));
+        reader.showWord();
     }
 
     private static void printMatrix(String name, int[][] matrix) {
