@@ -4,12 +4,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+// all memory
 public class TxtReader {
-    
-    private String word;
-    private char[][] charArray;
-    private List<Pair> list;
-    
+    //    8 bytes for the object header
+
+    private String word; // 8 * ( ( (n * 2) + 45) / 8) bytes; where n is count of chars
+    private char[][] charArray; // about 32 + (32 + 4 * M) * N where M is count of row's and N is count of col's
+    private List<Pair> list; // Pair = about 18 bytes (see class Pair fo details)
+    // list size = (Object header (4 bytes) + one int (4 bytes) + one reference (4 bytes)) * n where n is count of chars from "word"
+
+//    Class size  =  8 * ( ( (n * 2) + 45) / 8) + 32 + (32 + 4 * M) * N + 12 * n
+
     public TxtReader(String word, File file) {
         this.word = word;
         try {

@@ -2,9 +2,11 @@ package test2.onetwotrip;
 
 public class Pair {
 
-    private int row;
-    private int col;
-    private char letter;
+//    8 bytes for the object header
+
+    private int row; // 4 bytes
+    private int col; // 4 bytes
+    private char letter; // 2 bytes
 
     public Pair(int row, int col, char letter) {
         this.col = col;
